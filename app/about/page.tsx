@@ -18,6 +18,8 @@ import {
 import { BUSINESS_INFO, SITE_CONFIG } from "@/lib/constants";
 import { generateMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/schema-org";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "About Us",
@@ -137,8 +139,14 @@ export default function AboutPage() {
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <AnimatedSection direction="left" className="relative" as="div">
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary-100 to-primary-50 overflow-hidden flex items-center justify-center">
-                <Users className="h-32 w-32 text-primary-200" />
+              <div className="aspect-[4/5] rounded-2xl bg-primary-50 overflow-hidden">
+                <OptimizedImage
+                  src={SITE_IMAGES.doctor}
+                  alt="Dr. Lawrence Mikkelson — Chiropractor in Florence, KY"
+                  className="w-full h-full object-cover"
+                  width={500}
+                  height={625}
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground rounded-2xl p-6 shadow-soft">
                 <span className="text-3xl font-display font-bold">
@@ -245,6 +253,16 @@ export default function AboutPage() {
               achieve lasting health and vitality.
             </p>
           </AnimatedSection>
+
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-soft">
+            <OptimizedImage
+              src={SITE_IMAGES.clinic}
+              alt="Modern chiropractic clinic treatment room in Florence, KY"
+              className="w-full"
+              width={1200}
+              height={400}
+            />
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {approaches.map((approach, index) => (

@@ -4,7 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, Calendar, Shield, Star, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { BUSINESS_INFO } from "@/lib/constants";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export function HeroSection() {
   return (
@@ -12,18 +14,19 @@ export function HeroSection() {
       className="relative min-h-[90vh] flex items-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
+      {/* Hero background image */}
+      <OptimizedImage
+        src={SITE_IMAGES.hero}
+        alt="Chiropractor consulting with patient in modern clinic"
+        fill
+        priority
+        className="object-cover object-center"
+        containerClassName="absolute inset-0"
       />
 
-      {/* Decorative gradient orbs */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-400/20 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-900/92 to-primary-800/80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent" />
 
       <div className="container-wide relative z-10 py-32 lg:py-40">
         <div className="max-w-3xl">

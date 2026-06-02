@@ -4,7 +4,9 @@ import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { cn } from "@/lib/utils";
+import { getTestimonialAvatar } from "@/lib/site-images";
 
 const testimonials = [
   {
@@ -154,12 +156,23 @@ export function TestimonialsSection() {
                     &ldquo;{t.text}&rdquo;
                   </p>
                   <div className="flex items-center justify-between">
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
-                        <StarRating rating={t.rating} />
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-primary-50 overflow-hidden shrink-0">
+                        <OptimizedImage
+                          src={getTestimonialAvatar(current)}
+                          alt={`${t.name} patient review`}
+                          className="w-full h-full object-cover"
+                          width={40}
+                          height={40}
+                        />
                       </div>
-                      <p className="font-semibold text-sm">{t.name}</p>
-                      <p className="text-xs text-muted-foreground">{t.location}</p>
+                      <div>
+                        <div className="flex items-center gap-3 mb-1">
+                          <StarRating rating={t.rating} />
+                        </div>
+                        <p className="font-semibold text-sm">{t.name}</p>
+                        <p className="text-xs text-muted-foreground">{t.location}</p>
+                      </div>
                     </div>
                     <span className="text-xs font-medium text-primary bg-primary-50 px-3 py-1.5 rounded-full">
                       {t.condition}

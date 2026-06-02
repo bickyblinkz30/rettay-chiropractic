@@ -26,6 +26,8 @@ import {
 import { SchemaOrg } from "@/components/schema-org";
 import { BUSINESS_INFO, SITE_CONFIG } from "@/lib/constants";
 import { generateMetadata as genSeoMeta } from "@/lib/seo";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { SERVICE_IMAGES, SITE_IMAGES } from "@/lib/site-images";
 
 type ServiceDetail = {
   slug: string;
@@ -736,7 +738,15 @@ export default async function ServiceDetailPage({
         className="relative min-h-[50vh] flex items-center overflow-hidden"
         aria-label={`${service.title} hero`}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
+        <OptimizedImage
+          src={SERVICE_IMAGES[slug] || SITE_IMAGES.services.adjustment}
+          alt={`${service.title} at Rettay Chiropractic`}
+          fill
+          priority
+          className="object-cover object-center"
+          containerClassName="absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900/90 to-primary-800/80" />
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -808,8 +818,17 @@ export default async function ServiceDetailPage({
               direction="right"
               delay={0.15}
               as="div"
-              className="lg:col-span-2"
+              className="lg:col-span-2 space-y-6"
             >
+              <div className="rounded-2xl overflow-hidden shadow-soft">
+                <OptimizedImage
+                  src={SERVICE_IMAGES[slug] || SITE_IMAGES.services.adjustment}
+                  alt={`${service.title} — chiropractic care at Rettay Chiropractic in Florence, KY`}
+                  className="w-full"
+                  width={600}
+                  height={450}
+                />
+              </div>
               <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-2xl p-8 lg:p-10 border border-primary-100">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary text-white shrink-0">

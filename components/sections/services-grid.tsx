@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { SERVICE_IMAGES } from "@/lib/site-images";
 
 const services = [
   {
@@ -108,20 +110,32 @@ export function ServicesGridSection() {
               >
                 <Link
                   href={service.href}
-                  className="group block h-full bg-white rounded-2xl border border-border/60 p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+                  className="group block h-full bg-white rounded-2xl border border-border/60 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-50 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <Icon className="h-6 w-6" />
+                  <div className="relative h-40 bg-primary-50 overflow-hidden">
+                    <OptimizedImage
+                      src={SERVICE_IMAGES[service.href.replace("/services/", "")] || SERVICE_IMAGES["chiropractic-adjustments"]}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      containerClassName="absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
-                  <h3 className="text-base font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <span className="inline-flex items-center text-sm font-medium text-primary gap-1 group-hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
+                  <div className="p-5">
+                    <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-primary-50 text-primary mb-3 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center text-sm font-medium text-primary gap-1 group-hover:gap-2 transition-all">
+                      Learn More <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
                 </Link>
               </motion.div>
             );

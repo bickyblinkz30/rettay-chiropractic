@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" fill="none">
+  <defs>
+    <radialGradient id="bgGlow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#f0f6fa"/>
+      <stop offset="100%" stop-color="#dce6ee"/>
+    </radialGradient>
+    <linearGradient id="coatGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2f6"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5d6c2"/>
+      <stop offset="40%" stop-color="#eccab4"/>
+      <stop offset="100%" stop-color="#e0bca0"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#506070"/>
+      <stop offset="50%" stop-color="#3a4a5a"/>
+      <stop offset="100%" stop-color="#2a3845"/>
+    </linearGradient>
+    <linearGradient id="tieGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b5e77"/>
+      <stop offset="100%" stop-color="#084a5e"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circleFrame">
+      <circle cx="250" cy="210" r="130"/>
+    </clipPath>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="500" height="600" rx="24" fill="url(#bgGlow)"/>
+
+  <!-- Subtle background pattern -->
+  <circle cx="420" cy="80" r="180" fill="#ffffff" opacity="0.3"/>
+  <circle cx="80" cy="520" r="150" fill="#ffffff" opacity="0.2"/>
+
+  <!-- Head and shoulders area -->
+  <circle cx="250" cy="210" r="130" fill="#ffffff" stroke="#0b5e77" stroke-width="2" opacity="0.15"/>
+
+  <!-- Shoulders / White coat -->
+  <path d="M110 500 Q140 310 250 290 Q360 310 390 500" fill="url(#coatGrad)" filter="url(#softShadow)"/>
+  <path d="M125 500 L110 520 L140 540 L165 500" fill="url(#coatGrad)"/>
+  <path d="M375 500 L390 520 L360 540 L335 500" fill="url(#coatGrad)"/>
+
+  <!-- Coat lapels -->
+  <path d="M215 290 L230 320 L250 308 L270 320 L285 290" fill="#ffffff" stroke="#d8e0ea" stroke-width="1.5"/>
+  <path d="M225 305 L230 320" stroke="#d8e0ea" stroke-width="1"/>
+  <path d="M275 305 L270 320" stroke="#d8e0ea" stroke-width="1"/>
+
+  <!-- Tie -->
+  <path d="M244 308 L250 322 L256 308 L253 400 L247 400 Z" fill="url(#tieGrad)"/>
+
+  <!-- Pocket -->
+  <path d="M310 330 L340 330 L340 350 L310 350 Z" fill="none" stroke="#d8e0ea" stroke-width="1"/>
+  <path d="M318 330 L318 340" stroke="#d8e0ea" stroke-width="0.8"/>
+
+  <!-- Pen in pocket -->
+  <line x1="328" y1="330" x2="328" y2="320" stroke="#1a5a8a" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="328" cy="320" r="2" fill="#1a5a8a"/>
+
+  <!-- Neck -->
+  <rect x="232" y="280" width="36" height="25" rx="6" fill="url(#skinGrad)"/>
+
+  <!-- Head shape -->
+  <ellipse cx="250" cy="220" rx="75" ry="88" fill="url(#skinGrad)" clip-path="url(#circleFrame)"/>
+
+  <!-- Hair -->
+  <ellipse cx="250" cy="145" rx="78" ry="70" fill="url(#hairGrad)" clip-path="url(#circleFrame)"/>
+  <ellipse cx="250" cy="180" rx="74" ry="48" fill="url(#hairGrad)" clip-path="url(#circleFrame)"/>
+  <ellipse cx="205" cy="160" rx="28" ry="60" fill="url(#hairGrad)" clip-path="url(#circleFrame)"/>
+  <ellipse cx="295" cy="160" rx="28" ry="60" fill="url(#hairGrad)" clip-path="url(#circleFrame)"/>
+  <!-- Hair highlights -->
+  <ellipse cx="240" cy="140" rx="40" ry="25" fill="#607080" opacity="0.2" clip-path="url(#circleFrame)"/>
+
+  <!-- Ears -->
+  <ellipse cx="178" cy="218" rx="9" ry="16" fill="url(#skinGrad)"/>
+  <ellipse cx="322" cy="218" rx="9" ry="16" fill="url(#skinGrad)"/>
+
+  <!-- Eyebrows -->
+  <path d="M215 195 Q230 188 245 193" stroke="#3a4a58" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M255 193 Q270 188 285 195" stroke="#3a4a58" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="230" cy="210" rx="11" ry="6" fill="#ffffff"/>
+  <circle cx="230" cy="210" r="5.5" fill="#3a5a6a"/>
+  <circle cx="229" cy="208" r="2" fill="#ffffff"/>
+
+  <ellipse cx="270" cy="210" rx="11" ry="6" fill="#ffffff"/>
+  <circle cx="270" cy="210" r="5.5" fill="#3a5a6a"/>
+  <circle cx="269" cy="208" r="2" fill="#ffffff"/>
+
+  <!-- Nose -->
+  <path d="M245 216 Q242 230 249 235 Q256 230 253 216" stroke="#c8a890" stroke-width="1.5" fill="none"/>
+  <ellipse cx="249" cy="236" rx="7" ry="3.5" fill="#ddb8a0" opacity="0.5"/>
+
+  <!-- Warm friendly smile -->
+  <path d="M230 248 Q250 266 270 248" stroke="#a07058" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M235 246 Q250 258 265 246" stroke="#d0a890" stroke-width="1.2" fill="none" opacity="0.4"/>
+
+  <!-- Smile lines / nasolabial folds -->
+  <path d="M228 248 Q225 255 227 262" stroke="#c8a890" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M272 248 Q275 255 273 262" stroke="#c8a890" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Minor skin details -->
+  <circle cx="220" cy="242" r="1" fill="#c8a890" opacity="0.3"/>
+  <circle cx="260" cy="246" r="0.8" fill="#c8a890" opacity="0.3"/>
+
+  <!-- Name label -->
+  <text x="250" y="445" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="#0b5e77" text-anchor="middle">Dr. Lawrence Mikkelson</text>
+  <text x="250" y="474" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#6a8a9a" text-anchor="middle" letter-spacing="2" font-weight="500">CHIROPRACTOR · FLORENCE, KY</text>
+  <text x="250" y="496" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9ab0c0" text-anchor="middle" letter-spacing="1">25+ Years Experience</text>
+
+  <!-- Placeholder badge -->
+  <rect x="145" y="530" width="210" height="34" rx="17" fill="#0b5e77" opacity="0.85"/>
+  <text x="250" y="552" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8ac4d8" text-anchor="middle" letter-spacing="1.5" font-weight="500">PLACEHOLDER — REPLACEABLE IMAGE</text>
+</svg>

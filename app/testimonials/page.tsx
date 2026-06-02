@@ -6,6 +6,8 @@ import { TestimonialsSection } from "@/components/sections/testimonials";
 import Link from "next/link";
 import { Star, Quote, MessageSquare } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { getTestimonialAvatar } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Testimonials",
@@ -147,9 +149,20 @@ export default function TestimonialsPage() {
                   &ldquo;{review.text}&rdquo;
                 </p>
                 <div className="mt-5 pt-4 border-t border-border/50 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-sm">{review.name}</p>
-                    <p className="text-xs text-muted-foreground">{review.location}</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-primary-50 overflow-hidden shrink-0">
+                      <OptimizedImage
+                        src={getTestimonialAvatar(index)}
+                        alt={`${review.name} patient avatar`}
+                        className="w-full h-full object-cover"
+                        width={36}
+                        height={36}
+                      />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm">{review.name}</p>
+                      <p className="text-xs text-muted-foreground">{review.location}</p>
+                    </div>
                   </div>
                   <span className="text-xs font-medium text-primary bg-primary-50 px-2.5 py-1 rounded-full">
                     {review.condition}

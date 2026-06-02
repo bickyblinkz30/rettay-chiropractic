@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="roomBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f5f8"/>
+      <stop offset="100%" stop-color="#e4eaef"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0d8de"/>
+      <stop offset="100%" stop-color="#bcc6cc"/>
+    </linearGradient>
+    <linearGradient id="windowLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4f2f8"/>
+      <stop offset="100%" stop-color="#c8dcea"/>
+    </linearGradient>
+    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a6a80"/>
+      <stop offset="100%" stop-color="#0f5268"/>
+    </linearGradient>
+    <linearGradient id="tablePad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0e8ee"/>
+      <stop offset="100%" stop-color="#c8d4dc"/>
+    </linearGradient>
+    <linearGradient id="cabinetGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2f6f8"/>
+      <stop offset="100%" stop-color="#e0e6ec"/>
+    </linearGradient>
+    <linearGradient id="counterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf0"/>
+      <stop offset="100%" stop-color="#d4dce2"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.1"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Room walls -->
+  <rect width="800" height="380" fill="url(#roomBg)"/>
+
+  <!-- Wall baseboard -->
+  <rect x="0" y="370" width="800" height="12" fill="#c8d0d6"/>
+
+  <!-- Floor -->
+  <rect x="0" y="382" width="800" height="118" fill="url(#floorGrad)"/>
+  <line x1="0" y1="410" x2="800" y2="410" stroke="#b8c2c8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="0" y1="440" x2="800" y2="440" stroke="#b8c2c8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="0" y1="470" x2="800" y2="470" stroke="#b8c2c8" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Large window -->
+  <rect x="520" y="60" width="240" height="280" rx="6" fill="url(#windowLight)" stroke="#b0c8d6" stroke-width="2"/>
+  <rect x="528" y="68" width="108" height="264" rx="3" fill="#eef8fc" opacity="0.4"/>
+  <rect x="644" y="68" width="108" height="264" rx="3" fill="#eef8fc" opacity="0.4"/>
+  <line x1="636" y1="60" x2="636" y2="340" stroke="#b0c8d6" stroke-width="2"/>
+  <line x1="520" y1="200" x2="760" y2="200" stroke="#b0c8d6" stroke-width="2"/>
+  <!-- Window light effect -->
+  <polygon points="528,68 644,68 580,340 500,340" fill="#ffffff" opacity="0.06"/>
+  <polygon points="644,68 752,68 680,340 580,340" fill="#ffffff" opacity="0.04"/>
+
+  <!-- Window blinds suggestion -->
+  <line x1="528" y1="80" x2="752" y2="80" stroke="#c0d4e0" stroke-width="1" opacity="0.3"/>
+  <line x1="528" y1="100" x2="752" y2="100" stroke="#c0d4e0" stroke-width="1" opacity="0.3"/>
+  <line x1="528" y1="120" x2="752" y2="120" stroke="#c0d4e0" stroke-width="1" opacity="0.3"/>
+
+  <!-- Treatment table -->
+  <rect x="120" y="250" width="360" height="50" rx="10" fill="url(#tableGrad)" filter="url(#shadow)"/>
+  <rect x="128" y="255" width="344" height="38" rx="8" fill="url(#tablePad)"/>
+  <!-- Table pad details -->
+  <rect x="138" y="262" width="180" height="10" rx="5" fill="#bcc8d4" opacity="0.4"/>
+  <rect x="138" y="278" width="220" height="8" rx="4" fill="#bcc8d4" opacity="0.3"/>
+  <!-- Table legs -->
+  <rect x="140" y="300" width="12" height="80" rx="5" fill="#8a9aaa"/>
+  <rect x="448" y="300" width="12" height="80" rx="5" fill="#8a9aaa"/>
+  <rect x="134" y="375" width="24" height="8" rx="4" fill="#7a8a9a"/>
+  <rect x="442" y="375" width="24" height="8" rx="4" fill="#7a8a9a"/>
+
+  <!-- Paper sheet on table -->
+  <rect x="210" y="258" width="80" height="30" rx="2" fill="#ffffff" opacity="0.5"/>
+  <line x1="218" y1="266" x2="282" y2="266" stroke="#c8d4dc" stroke-width="0.8" opacity="0.4"/>
+  <line x1="218" y1="274" x2="272" y2="274" stroke="#c8d4dc" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Counter/cabinet against wall -->
+  <rect x="30" y="200" width="240" height="170" rx="4" fill="url(#cabinetGrad)" stroke="#c8d4dc" stroke-width="1"/>
+  <rect x="35" y="230" width="68" height="135" rx="3" fill="#e8eef4" stroke="#d0dce2" stroke-width="0.8"/>
+  <rect x="110" y="230" width="68" height="135" rx="3" fill="#e8eef4" stroke="#d0dce2" stroke-width="0.8"/>
+  <rect x="185" y="230" width="68" height="135" rx="3" fill="#e8eef4" stroke="#d0dce2" stroke-width="0.8"/>
+  <!-- Cabinet handles -->
+  <rect x="80" y="295" width="3" height="20" rx="1.5" fill="#b0c0cc"/>
+  <rect x="155" y="295" width="3" height="20" rx="1.5" fill="#b0c0cc"/>
+  <rect x="230" y="295" width="3" height="20" rx="1.5" fill="#b0c0cc"/>
+  <!-- Counter top -->
+  <rect x="26" y="196" width="248" height="8" rx="2" fill="url(#counterGrad)"/>
+
+  <!-- Items on counter -->
+  <rect x="35" y="180" width="16" height="16" rx="3" fill="#ffffff" stroke="#d0dce2" stroke-width="0.8"/>
+  <rect x="56" y="178" width="12" height="18" rx="2" fill="#b8d4dc" opacity="0.6"/>
+  <rect x="240" y="178" width="20" height="18" rx="4" fill="#d4e4ea" opacity="0.5"/>
+
+  <!-- Skeleton model -->
+  <circle cx="420" cy="100" r="14" fill="#e8dcc8" stroke="#d0c8b8" stroke-width="1.2"/>
+  <rect x="415" y="114" width="10" height="30" rx="4" fill="#e8dcc8" stroke="#d0c8b8" stroke-width="0.5"/>
+  <line x1="408" y1="124" x2="395" y2="148" stroke="#d0c8b8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="432" y1="124" x2="445" y2="148" stroke="#d0c8b8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="420" y1="144" x2="420" y2="190" stroke="#d0c8b8" stroke-width="2.5"/>
+  <line x1="420" y1="168" x2="405" y2="185" stroke="#d0c8b8" stroke-width="2"/>
+  <line x1="420" y1="168" x2="435" y2="185" stroke="#d0c8b8" stroke-width="2"/>
+  <!-- Skeleton stand -->
+  <line x1="420" y1="190" x2="420" y2="205" stroke="#d0c8b8" stroke-width="2"/>
+  <rect x="412" y="205" width="16" height="5" rx="2" fill="#d0c8b8"/>
+
+  <!-- Small potted plant -->
+  <rect x="730" y="340" width="40" height="42" rx="5" fill="#c8a880"/>
+  <ellipse cx="750" cy="330" rx="30" ry="26" fill="#5a8a5a" opacity="0.7"/>
+  <ellipse cx="742" cy="325" rx="20" ry="18" fill="#6a9a6a" opacity="0.6"/>
+  <ellipse cx="758" cy="328" rx="16" ry="16" fill="#4a7a4a" opacity="0.5"/>
+
+  <!-- Wall art / diploma -->
+  <rect x="60" y="75" width="100" height="80" rx="4" fill="#e8eef4" stroke="#c8d4dc" stroke-width="1.5"/>
+  <rect x="66" y="81" width="88" height="68" rx="2" fill="#f4f8fa"/>
+  <line x1="72" y1="96" x2="148" y2="96" stroke="#b0c4d0" stroke-width="1.5" opacity="0.5"/>
+  <line x1="72" y1="106" x2="140" y2="106" stroke="#b0c4d0" stroke-width="1" opacity="0.4"/>
+  <line x1="72" y1="114" x2="136" y2="114" stroke="#b0c4d0" stroke-width="1" opacity="0.4"/>
+  <circle cx="110" cy="135" r="8" fill="#0b5e77" opacity="0.15"/>
+
+  <!-- Light overlay -->
+  <rect x="500" y="0" width="300" height="500" fill="#ffffff" opacity="0.03"/>
+
+  <!-- Subtle vignette -->
+  <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.7">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.15"/>
+  </radialGradient>
+  <rect width="800" height="500" fill="url(#vignette)"/>
+</svg>

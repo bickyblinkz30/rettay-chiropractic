@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef5f8"/>
+      <stop offset="100%" stop-color="#dce6ee"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0d0ba"/>
+      <stop offset="100%" stop-color="#dcb498"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dce4ec"/>
+      <stop offset="100%" stop-color="#c8d4dc"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a1a"/>
+      <stop offset="100%" stop-color="#2a1a0a"/>
+    </linearGradient>
+    <linearGradient id="painGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e85050" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e85050" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="1" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.1"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Patient body -->
+  <ellipse cx="300" cy="210" rx="45" ry="80" fill="url(#shirtGrad)"/>
+
+  <!-- Patient head -->
+  <circle cx="300" cy="110" r="32" fill="url(#skinGrad)"/>
+  <!-- Hair -->
+  <ellipse cx="300" cy="82" rx="34" ry="28" fill="url(#hairGrad)"/>
+  <ellipse cx="300" cy="100" rx="30" ry="18" fill="url(#hairGrad)"/>
+  <ellipse cx="282" cy="88" rx="14" ry="26" fill="url(#hairGrad)"/>
+  <!-- Face -->
+  <path d="M288 108 Q294 104 300 108" stroke="#5a3a2a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M300 108 Q306 104 312 108" stroke="#5a3a2a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Concerned expression -->
+  <path d="M292 120 Q300 124 308 120" stroke="#a07058" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Arms reaching to lower back -->
+  <path d="M255 190 Q225 220 245 260" stroke="#dce4ec" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M345 190 Q375 220 355 260" stroke="#dce4ec" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <!-- Hands -->
+  <circle cx="244" cy="262" r="8" fill="url(#skinGrad)"/>
+  <circle cx="356" cy="262" r="8" fill="url(#skinGrad)"/>
+
+  <!-- Pain area - lower back -->
+  <ellipse cx="300" cy="265" rx="30" ry="18" fill="url(#painGrad)" filter="url(#shadow)"/>
+  <ellipse cx="300" cy="265" rx="18" ry="10" fill="#e85050" opacity="0.15"/>
+
+  <!-- Pain indicator lines -->
+  <line x1="272" y1="258" x2="262" y2="252" stroke="#e85050" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="328" y1="258" x2="338" y2="252" stroke="#e85050" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="300" y1="282" x2="300" y2="294" stroke="#e85050" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Small heat/pain waves -->
+  <path d="M270 272 Q264 268 268 264" stroke="#e85050" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M330 272 Q336 268 332 264" stroke="#e85050" stroke-width="1.5" fill="none" opacity="0.3"/>
+
+  <!-- Spine alignment dots -->
+  <circle cx="300" cy="190" r="3" fill="#b8c8d8" opacity="0.5"/>
+  <circle cx="300" cy="210" r="3" fill="#b8c8d8" opacity="0.5"/>
+  <circle cx="300" cy="230" r="3" fill="#b8c8d8" opacity="0.5"/>
+
+  <!-- Label -->
+  <rect x="190" y="355" width="220" height="32" rx="16" fill="#0b5e77" opacity="0.85"/>
+  <text x="300" y="376" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">BACK PAIN TREATMENT</text>
+</svg>

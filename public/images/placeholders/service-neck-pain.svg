@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef5f8"/>
+      <stop offset="100%" stop-color="#dce6ee"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2d4be"/>
+      <stop offset="100%" stop-color="#e0b898"/>
+    </linearGradient>
+    <linearGradient id="patientSkin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0ceb8"/>
+      <stop offset="100%" stop-color="#dcb498"/>
+    </linearGradient>
+    <linearGradient id="coatGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef2f6"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5a6a"/>
+      <stop offset="100%" stop-color="#2a3845"/>
+    </linearGradient>
+    <linearGradient id="patientHair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4a3a"/>
+      <stop offset="100%" stop-color="#3a2a1a"/>
+    </linearGradient>
+    <linearGradient id="painGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e85050" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e85050" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Patient seated -->
+  <ellipse cx="260" cy="210" rx="38" ry="70" fill="#dce4ec"/>
+  <ellipse cx="260" cy="210" rx="38" ry="70" fill="#c8d4dc" opacity="0.3"/>
+
+  <!-- Patient head -->
+  <circle cx="260" cy="120" r="30" fill="url(#patientSkin)"/>
+  <ellipse cx="260" cy="95" rx="32" ry="25" fill="url(#patientHair)"/>
+  <ellipse cx="260" cy="112" rx="28" ry="16" fill="url(#patientHair)"/>
+  <ellipse cx="243" cy="102" rx="14" ry="22" fill="url(#patientHair)"/>
+
+  <!-- Doctor behind patient -->
+  <ellipse cx="340" cy="210" rx="35" ry="78" fill="url(#coatGrad)" filter="url(#shadow)"/>
+
+  <!-- Doctor head -->
+  <circle cx="340" cy="115" r="32" fill="url(#skinGrad)"/>
+  <ellipse cx="340" cy="88" rx="34" ry="28" fill="url(#hairGrad)"/>
+  <ellipse cx="340" cy="105" rx="30" ry="18" fill="url(#hairGrad)"/>
+  <ellipse cx="322" cy="95" rx="16" ry="24" fill="url(#hairGrad)"/>
+
+  <!-- Doctor face -->
+  <circle cx="334" cy="112" r="2.5" fill="#3a5a6a"/>
+  <circle cx="346" cy="112" r="2.5" fill="#3a5a6a"/>
+  <path d="M335 125 Q340 130 345 125" stroke="#a07058" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Doctor arms reaching to patient neck -->
+  <path d="M305 160 Q285 175 288 195" stroke="url(#coatGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M375 160 Q395 175 392 195" stroke="url(#coatGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Hands on neck area -->
+  <ellipse cx="287" cy="198" rx="9" ry="6" fill="url(#skinGrad)"/>
+  <ellipse cx="393" cy="198" rx="9" ry="6" fill="url(#skinGrad)"/>
+
+  <!-- Neck focus area highlight -->
+  <ellipse cx="260" cy="175" rx="22" ry="14" fill="url(#painGrad)"/>
+  <ellipse cx="260" cy="175" rx="14" ry="8" fill="#0b5e77" opacity="0.1"/>
+
+  <!-- Spine indication -->
+  <circle cx="260" cy="200" r="2.5" fill="#b8c8d8" opacity="0.4"/>
+  <circle cx="260" cy="215" r="2.5" fill="#b8c8d8" opacity="0.4"/>
+  <circle cx="260" cy="230" r="2.5" fill="#b8c8d8" opacity="0.4"/>
+
+  <!-- Pain indication -->
+  <line x1="240" y1="172" x2="232" y2="168" stroke="#e85050" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="280" y1="172" x2="288" y2="168" stroke="#e85050" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Label -->
+  <rect x="190" y="355" width="220" height="32" rx="16" fill="#0b5e77" opacity="0.85"/>
+  <text x="300" y="376" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">NECK PAIN RELIEF</text>
+</svg>
