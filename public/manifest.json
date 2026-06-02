@@ -1,0 +1,12 @@
+{
+  "name": "Rettay Chiropractic Office PSC",
+  "short_name": "Rettay Chiro",
+  "description": "Premier chiropractic care in Florence, KY. Back pain, neck pain, sciatica, sports injury treatment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5e77",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
