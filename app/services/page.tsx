@@ -1,5 +1,6 @@
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import {
   Bone,
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 import { BUSINESS_INFO, SITE_CONFIG, FOOTER_LINKS } from "@/lib/constants";
 import { generateMetadata } from "@/lib/seo";
+import { SERVICE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Our Chiropractic Services",
@@ -135,20 +137,32 @@ export default function ServicesPage() {
                 >
                   <Link
                     href={service.href}
-                    className="group block h-full bg-white rounded-2xl border border-border/60 p-6 lg:p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+                    className="group block h-full bg-white rounded-2xl border border-border/60 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   >
-                    <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-50 text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      <Icon className="h-7 w-7" />
+                    <div className="relative h-40 bg-primary-50 overflow-hidden">
+                      <OptimizedImage
+                        src={SERVICE_IMAGES[slug] || SERVICE_IMAGES["chiropractic-adjustments"]}
+                        alt={`${service.label} treatment at Rettay Chiropractic`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        containerClassName="absolute inset-0"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                      {service.label}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                      {description}
-                    </p>
-                    <span className="inline-flex items-center text-sm font-medium text-primary gap-1 group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight className="h-4 w-4" />
-                    </span>
+                    <div className="p-6 lg:p-8">
+                      <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-50 text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                        {service.label}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                        {description}
+                      </p>
+                      <span className="inline-flex items-center text-sm font-medium text-primary gap-1 group-hover:gap-2 transition-all">
+                        Learn More <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </Link>
                 </AnimatedSection>
               );

@@ -2,6 +2,7 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SchemaOrg } from "@/components/schema-org";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import {
   Bone,
@@ -19,6 +20,7 @@ import {
 } from "lucide-react";
 import { BUSINESS_INFO, SITE_CONFIG } from "@/lib/constants";
 import { generateMetadata } from "@/lib/seo";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Conditions We Treat",
@@ -236,6 +238,39 @@ export default function ConditionsPage() {
               techniques tailored to your needs.
             </p>
           </AnimatedSection>
+
+          {/* Featured visual — replaced by clinic photo when available */}
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-soft">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+              <div className="relative h-56 md:h-auto overflow-hidden">
+                <OptimizedImage
+                  src={SITE_IMAGES.services.backPain}
+                  alt="Patient receiving back pain treatment at Rettay Chiropractic"
+                  fill
+                  className="object-cover"
+                  containerClassName="absolute inset-0"
+                />
+              </div>
+              <div className="relative h-56 md:h-auto overflow-hidden">
+                <OptimizedImage
+                  src={SITE_IMAGES.services.neckPain}
+                  alt="Neck pain treatment and chiropractic care"
+                  fill
+                  className="object-cover"
+                  containerClassName="absolute inset-0"
+                />
+              </div>
+              <div className="relative h-56 md:h-auto overflow-hidden">
+                <OptimizedImage
+                  src={SITE_IMAGES.services.sports}
+                  alt="Sports injury recovery and rehabilitation"
+                  fill
+                  className="object-cover"
+                  containerClassName="absolute inset-0"
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {conditions.map((condition, index) => {

@@ -2,9 +2,11 @@ import { generateMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/schema-org";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 import { Calendar, CheckCircle, FileText, Users, ClipboardList, Clock } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "New Patients",
@@ -117,6 +119,43 @@ export default function NewPatientsPage() {
               efficient. Here&apos;s what you can expect.
             </p>
           </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
+            <AnimatedSection direction="left" as="div">
+              <div className="rounded-2xl overflow-hidden shadow-soft aspect-[4/3]">
+                <OptimizedImage
+                  src={SITE_IMAGES.clinic}
+                  alt="Modern chiropractic treatment room at Rettay Chiropractic Office in Florence, KY"
+                  width={700}
+                  height={525}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection direction="right" delay={0.1} as="div">
+              <h3 className="text-xl font-semibold mb-4">
+                A Welcoming, Modern Clinic
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Our Florence, KY office is designed with your comfort and recovery in mind. From the
+                moment you walk in, you&apos;ll experience a calm, professional environment staffed
+                by a caring team dedicated to your health goals.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Private consultation rooms",
+                  "Modern diagnostic equipment",
+                  "Comfortable treatment tables",
+                  "Convenient parking and easy access",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {steps.map((step, index) => {
