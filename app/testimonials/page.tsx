@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Star, Quote, MessageSquare } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import { getTestimonialAvatar } from "@/lib/site-images";
+import { getTestimonialAvatar, SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Testimonials",
@@ -107,8 +107,17 @@ export default function TestimonialsPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden" aria-labelledby="testimonials-hero-title">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
-        <div className="absolute inset-0 bg-dots opacity-10" />
+        {/* Hero background image — active chiropractic rehabilitation */}
+        <OptimizedImage
+          src={SITE_IMAGES.heroTestimonials}
+          alt="Patient undergoing rehabilitation therapy with chiropractic professional"
+          fill
+          priority
+          className="object-cover object-center"
+          containerClassName="absolute inset-0"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">

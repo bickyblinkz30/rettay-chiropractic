@@ -73,8 +73,17 @@ export default function NewPatientsPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden" aria-labelledby="np-hero-title">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
-        <div className="absolute inset-0 bg-dots opacity-10" />
+        {/* Hero background image — modern chiropractic treatment room */}
+        <OptimizedImage
+          src={SITE_IMAGES.heroNewPatients}
+          alt="Clean, modern chiropractic treatment room with professional equipment"
+          fill
+          priority
+          className="object-cover object-center"
+          containerClassName="absolute inset-0"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">

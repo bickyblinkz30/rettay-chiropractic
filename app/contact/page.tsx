@@ -2,9 +2,11 @@ import { generateMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/schema-org";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { AppointmentForm } from "@/components/forms/appointment-form";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Contact Us",
@@ -17,8 +19,17 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden" aria-labelledby="contact-hero-title">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
-        <div className="absolute inset-0 bg-dots opacity-10" />
+        {/* Hero background image — professional chiropractic treatment room */}
+        <OptimizedImage
+          src={SITE_IMAGES.heroContact}
+          alt="Professional chiropractic clinic treatment room ready to welcome new patients"
+          fill
+          priority
+          className="object-cover object-center"
+          containerClassName="absolute inset-0"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">

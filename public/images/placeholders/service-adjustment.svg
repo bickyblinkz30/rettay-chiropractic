@@ -1,89 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#eef5f8"/>
-      <stop offset="100%" stop-color="#dce6ee"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f7fa"/>
+      <stop offset="100%" stop-color="#e4eef5"/>
     </linearGradient>
-    <linearGradient id="coatGrad" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0d5c2"/>
+      <stop offset="100%" stop-color="#e4c0a8"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#eef2f6"/>
+      <stop offset="100%" stop-color="#eef3f7"/>
     </linearGradient>
-    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f2d4be"/>
-      <stop offset="100%" stop-color="#e0b898"/>
-    </linearGradient>
-    <linearGradient id="patientSkin" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f0ceb8"/>
-      <stop offset="100%" stop-color="#dcb498"/>
-    </linearGradient>
-    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#4a5a6a"/>
-      <stop offset="100%" stop-color="#2a3845"/>
-    </linearGradient>
-    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a6a80"/>
-      <stop offset="100%" stop-color="#0f5268"/>
-    </linearGradient>
-    <linearGradient id="highlight" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f5a623" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#f5a623" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="shadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-      <feOffset dx="1" dy="2"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.1"/></feComponentTransfer>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-
-  <rect width="600" height="400" fill="url(#bgGrad)" rx="12"/>
-
-  <!-- Treatment table surface -->
-  <rect x="100" y="270" width="400" height="35" rx="8" fill="url(#tableGrad)" filter="url(#shadow)"/>
-  <rect x="108" y="274" width="384" height="26" rx="6" fill="#d8e2ea"/>
-  <rect x="116" y="280" width="160" height="8" rx="4" fill="#c4d2dc" opacity="0.5"/>
-
-  <!-- Doctor body -->
-  <ellipse cx="280" cy="210" rx="32" ry="75" fill="url(#coatGrad)"/>
-
-  <!-- Doctor head -->
-  <circle cx="280" cy="120" r="34" fill="url(#skinGrad)"/>
-  <!-- Hair -->
-  <ellipse cx="280" cy="90" rx="36" ry="30" fill="url(#hairGrad)"/>
-  <ellipse cx="280" cy="108" rx="34" ry="20" fill="url(#hairGrad)"/>
-  <!-- Face -->
-  <circle cx="274" cy="118" r="2.5" fill="#3a5a6a"/>
-  <circle cx="286" cy="118" r="2.5" fill="#3a5a6a"/>
-  <path d="M275 130 Q280 136 285 130" stroke="#a07058" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-
-  <!-- Doctor arms reaching down -->
-  <path d="M248 180 Q210 210 200 240" stroke="url(#coatGrad)" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M312 180 Q350 210 360 240" stroke="url(#coatGrad)" stroke-width="16" fill="none" stroke-linecap="round"/>
-
-  <!-- Hands on spine -->
-  <ellipse cx="198" cy="245" rx="10" ry="7" fill="url(#skinGrad)"/>
-  <ellipse cx="362" cy="245" rx="10" ry="7" fill="url(#skinGrad)"/>
-
-  <!-- Spine illustration -->
-  <rect x="260" y="240" width="10" height="14" rx="4" fill="#b8c8d8"/>
-  <rect x="260" y="258" width="10" height="14" rx="4" fill="#b8c8d8"/>
-  <rect x="260" y="276" width="10" height="14" rx="4" fill="#b8c8d8"/>
-  <rect x="260" y="294" width="10" height="14" rx="4" fill="#b8c8d8"/>
-
-  <!-- Adjustment highlight area -->
-  <rect x="258" y="256" width="14" height="16" rx="4" fill="#0b5e77" opacity="0.25"/>
-
-  <!-- Adjustment energy lines -->
-  <line x1="265" y1="264" x2="265" y2="240" stroke="#0b5e77" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.35"/>
-  <line x1="265" y1="264" x2="265" y2="288" stroke="#0b5e77" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.35"/>
-
-  <!-- Sparkle/highlight effects -->
-  <circle cx="195" cy="220" r="2.5" fill="url(#highlight)"/>
-  <circle cx="365" cy="220" r="2.5" fill="url(#highlight)"/>
-  <circle cx="210" cy="210" r="1.5" fill="url(#highlight)"/>
-  <circle cx="350" cy="210" r="1.5" fill="url(#highlight)"/>
-
-  <!-- Service label -->
-  <rect x="190" y="355" width="220" height="32" rx="16" fill="#0b5e77" opacity="0.85"/>
-  <text x="300" y="376" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">CHIROPRACTIC ADJUSTMENT</text>
+  <rect width="600" height="400" fill="url(#bg)" rx="12"/>
+  <!-- Doctor on left -->
+  <ellipse cx="230" cy="180" rx="30" ry="60" fill="url(#coat)"/>
+  <circle cx="230" cy="110" r="28" fill="url(#skin)"/>
+  <ellipse cx="230" cy="82" rx="30" ry="25" fill="#3a4a5a"/>
+  <circle cx="225" cy="108" r="2.5" fill="#3a5a6a"/>
+  <circle cx="235" cy="108" r="2.5" fill="#3a5a6a"/>
+  <!-- Doctor arms reaching to spine -->
+  <path d="M200 155 Q170 170 165 190" stroke="url(#coat)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M260 155 Q290 170 295 190" stroke="url(#coat)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <!-- Hands -->
+  <circle cx="165" cy="192" r="8" fill="url(#skin)"/>
+  <circle cx="295" cy="192" r="8" fill="url(#skin)"/>
+  <!-- Patient spine outline -->
+  <rect x="175" y="195" width="8" height="12" rx="3" fill="#c8d8e5"/>
+  <rect x="175" y="212" width="8" height="12" rx="3" fill="#c8d8e5"/>
+  <rect x="175" y="229" width="8" height="12" rx="3" fill="#c8d8e5"/>
+  <rect x="175" y="246" width="8" height="12" rx="3" fill="#c8d8e5"/>
+  <rect x="175" y="263" width="8" height="12" rx="3" fill="#c8d8e5"/>
+  <!-- Spine highlight (being adjusted) -->
+  <rect x="175" y="212" width="10" height="12" rx="3" fill="#0b5e77" opacity="0.5"/>
+  <!-- Adjustment lines -->
+  <line x1="180" y1="218" x2="180" y2="195" stroke="#0b5e77" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
+  <line x1="180" y1="218" x2="180" y2="240" stroke="#0b5e77" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
+  <!-- Energy/sparkle -->
+  <circle cx="160" cy="180" r="2" fill="#f5a623" opacity="0.7"/>
+  <circle cx="300" cy="180" r="2" fill="#f5a623" opacity="0.7"/>
+  <circle cx="175" cy="170" r="1.5" fill="#f5a623" opacity="0.5"/>
+  <!-- Label -->
+  <rect x="200" y="340" width="200" height="40" rx="8" fill="#0b5e77" opacity="0.85"/>
+  <text x="300" y="365" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">CHIROPRACTIC ADJUSTMENT</text>
+  <text x="300" y="395" font-family="system-ui, sans-serif" font-size="10" fill="#6a8a9a" text-anchor="middle" letter-spacing="2">PLACEHOLDER — REPLACEABLE</text>
 </svg>

@@ -9,6 +9,33 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { NAVIGATION, BUSINESS_INFO } from "@/lib/constants";
 
+function SpineIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 32"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Vertebrae bodies */}
+      <rect x="6" y="1"  width="12" height="5" rx="2.5" />
+      <rect x="6" y="9"  width="12" height="5" rx="2.5" />
+      <rect x="6" y="17" width="12" height="5" rx="2.5" />
+      <rect x="6" y="25" width="12" height="5" rx="2.5" />
+      {/* Transverse processes — left */}
+      <rect x="0" y="2.5"  width="6" height="2" rx="1" />
+      <rect x="0" y="10.5" width="6" height="2" rx="1" />
+      <rect x="0" y="18.5" width="6" height="2" rx="1" />
+      <rect x="0" y="26.5" width="6" height="2" rx="1" />
+      {/* Transverse processes — right */}
+      <rect x="18" y="2.5"  width="6" height="2" rx="1" />
+      <rect x="18" y="10.5" width="6" height="2" rx="1" />
+      <rect x="18" y="18.5" width="6" height="2" rx="1" />
+      <rect x="18" y="26.5" width="6" height="2" rx="1" />
+    </svg>
+  );
+}
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,17 +71,31 @@ export function Header() {
       role="banner"
     >
       <nav className="container-wide flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
+        {/* Logo */}
         <Link
           href="/"
           className={cn(
-            "flex items-center gap-2 font-display text-xl font-bold transition-colors",
+            "flex items-center gap-2.5 shrink-0 transition-colors",
             isScrolled ? "text-foreground" : "text-white",
           )}
+          aria-label="Rettay Chiropractic Office PSC — Home"
         >
-          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-            RC
+          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground shrink-0">
+            <SpineIcon className="w-[18px] h-[22px]" />
           </div>
-          <span className="hidden sm:inline">Rettay Chiropractic</span>
+          <div className="hidden sm:flex flex-col justify-center leading-tight">
+            <span className="text-[11px] lg:text-xs font-bold tracking-[0.12em] uppercase whitespace-nowrap">
+              Rettay Chiropractic
+            </span>
+            <span
+              className={cn(
+                "text-[9px] lg:text-[10px] font-semibold tracking-[0.2em] uppercase",
+                isScrolled ? "text-foreground/55" : "text-white/65",
+              )}
+            >
+              Office PSC
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -131,6 +172,21 @@ export function Header() {
             aria-label="Mobile navigation"
           >
             <div className="container-wide py-4 space-y-1">
+              {/* Mobile brand name */}
+              <div className="flex items-center gap-2.5 px-4 py-3 mb-2 border-b border-border/50">
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground shrink-0">
+                  <SpineIcon className="w-4 h-5" />
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-foreground">
+                    Rettay Chiropractic
+                  </span>
+                  <span className="text-[8px] font-semibold tracking-[0.2em] uppercase text-foreground/50">
+                    Office PSC
+                  </span>
+                </div>
+              </div>
+
               {NAVIGATION.map((item) => (
                 <Link
                   key={item.href}

@@ -3,6 +3,30 @@ import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS_INFO, FOOTER_LINKS } from "@/lib/constants";
 
+function SpineIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 32"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="6" y="1"  width="12" height="5" rx="2.5" />
+      <rect x="6" y="9"  width="12" height="5" rx="2.5" />
+      <rect x="6" y="17" width="12" height="5" rx="2.5" />
+      <rect x="6" y="25" width="12" height="5" rx="2.5" />
+      <rect x="0" y="2.5"  width="6" height="2" rx="1" />
+      <rect x="0" y="10.5" width="6" height="2" rx="1" />
+      <rect x="0" y="18.5" width="6" height="2" rx="1" />
+      <rect x="0" y="26.5" width="6" height="2" rx="1" />
+      <rect x="18" y="2.5"  width="6" height="2" rx="1" />
+      <rect x="18" y="10.5" width="6" height="2" rx="1" />
+      <rect x="18" y="18.5" width="6" height="2" rx="1" />
+      <rect x="18" y="26.5" width="6" height="2" rx="1" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -13,11 +37,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 text-white font-bold">
-                RC
+            <Link href="/" className="flex items-center gap-3" aria-label="Rettay Chiropractic Office PSC — Home">
+              <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/15 text-white shrink-0">
+                <SpineIcon className="w-5 h-[26px]" />
               </div>
-              <span className="font-display text-lg font-bold">Rettay Chiropractic</span>
+              <div className="flex flex-col justify-center leading-tight">
+                <span className="text-sm font-bold tracking-[0.1em] uppercase text-white">
+                  Rettay Chiropractic
+                </span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary-300">
+                  Office PSC
+                </span>
+              </div>
             </Link>
             <p className="text-sm text-primary-200 leading-relaxed">
               Helping you move better, feel better, and live pain-free. Professional chiropractic

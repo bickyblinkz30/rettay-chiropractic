@@ -1,6 +1,8 @@
 import { generateMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/schema-org";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { BUSINESS_INFO } from "@/lib/constants";
+import { SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
   title: "Privacy Policy",
@@ -64,7 +66,17 @@ export default function PrivacyPolicyPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" />
+        {/* Hero background image */}
+        <OptimizedImage
+          src={SITE_IMAGES.heroPolicy}
+          alt="Rettay Chiropractic clinic — professional and trustworthy patient care"
+          fill
+          priority
+          className="object-cover object-center"
+          containerClassName="absolute inset-0"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
         <div className="container-wide relative z-10 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
             Privacy Policy
