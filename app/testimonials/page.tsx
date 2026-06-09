@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Star, Quote, MessageSquare } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import { getTestimonialAvatar, SITE_IMAGES } from "@/lib/site-images";
 
 export const metadata = generateMetadata({
@@ -117,7 +118,7 @@ export default function TestimonialsPage() {
           containerClassName="absolute inset-0"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
+        <HeroOverlay />
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">

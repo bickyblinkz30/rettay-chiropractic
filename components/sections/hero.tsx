@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, Calendar, Shield, Star, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { SITE_IMAGES } from "@/lib/site-images";
 
@@ -24,9 +25,8 @@ export function HeroSection() {
         containerClassName="absolute inset-0"
       />
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-900/92 to-primary-800/80" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent" />
+      {/* Dark overlay for readability — shared across all hero sections */}
+      <HeroOverlay />
 
       <div className="container-wide relative z-10 py-32 lg:py-40">
         <div className="max-w-3xl">

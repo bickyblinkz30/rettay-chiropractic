@@ -1,6 +1,7 @@
 import { generateMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/schema-org";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import { BUSINESS_INFO } from "@/lib/constants";
 import { SITE_IMAGES } from "@/lib/site-images";
 
@@ -76,7 +77,7 @@ export default function PrivacyPolicyPage() {
           containerClassName="absolute inset-0"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
+        <HeroOverlay />
         <div className="container-wide relative z-10 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
             Privacy Policy

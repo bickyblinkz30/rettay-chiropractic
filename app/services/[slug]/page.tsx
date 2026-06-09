@@ -18,6 +18,7 @@ import type { LucideIcon } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import {
   Accordion,
   AccordionItem,
@@ -747,9 +748,7 @@ export default async function ServiceDetailPage({
           containerClassName="absolute inset-0"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/92 via-primary-900/88 to-primary-800/78" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-400/15 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+        <HeroOverlay />
 
         <div className="container-wide relative z-10 py-24 lg:py-32">
           <AnimatedSection as="div" className="max-w-3xl">

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SchemaOrg } from "@/components/schema-org";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import Link from "next/link";
 import {
   Bone,
@@ -189,9 +190,7 @@ export default function ConditionsPage() {
           containerClassName="absolute inset-0"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/92 via-primary-900/88 to-primary-800/78" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-400/15 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+        <HeroOverlay />
 
         <div className="container-wide relative z-10 py-32 lg:py-40">
           <AnimatedSection as="div" className="max-w-3xl">

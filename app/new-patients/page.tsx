@@ -3,6 +3,7 @@ import { SchemaOrg } from "@/components/schema-org";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroOverlay } from "@/components/sections/hero-overlay";
 import Link from "next/link";
 import { Calendar, CheckCircle, FileText, Users, ClipboardList, Clock } from "lucide-react";
 import { BUSINESS_INFO } from "@/lib/constants";
@@ -83,7 +84,7 @@ export default function NewPatientsPage() {
           containerClassName="absolute inset-0"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/93 via-primary-900/89 to-primary-800/80" />
+        <HeroOverlay />
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">
